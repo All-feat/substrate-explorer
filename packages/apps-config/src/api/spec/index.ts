@@ -5,6 +5,7 @@ import type { OverrideBundleDefinition } from '@polkadot/types/types';
 
 import acala from './acala';
 import ajuna from './ajuna';
+import allfeat from './allfeat';
 import altair from './altair';
 import apron from './apron';
 import aresGladios from './ares-gladios';
@@ -144,6 +145,7 @@ const spec: Record<string, OverrideBundleDefinition> = {
   ...acala,
   ajuna,
   altair,
+  'allfeat-runtime': allfeat,
   apron,
   'ares-gladios': aresGladios,
   'ares-mars': aresParachain,

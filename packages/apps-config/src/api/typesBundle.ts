@@ -22814,6 +22814,23 @@ export const typesBundle = {
         }
       ]
     },
+    "allfeat-runtime": {
+      "types": [
+        {
+          "minmax": [
+            0,
+            null
+          ],
+          "types": {
+            "PalletArtistsCandidate": {
+              "accountId": "AccountId",
+              "name": "Text",
+              "created_at": "u32"
+            }
+          }
+        }
+      ]
+    },
     "apron": {
       "types": [
         {

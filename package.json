@@ -64,6 +64,7 @@
     "test:skipped": "echo 'tests skipped'"
   },
   "devDependencies": {
+    "@allfeat/types": "^1.0.1",
     "@babel/core": "^7.18.13",
     "@babel/register": "^7.18.9",
     "@babel/runtime": "^7.18.9",

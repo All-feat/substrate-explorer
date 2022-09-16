@@ -28,6 +28,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@allfeat/types@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@allfeat/types@npm:1.0.1"
+  dependencies:
+    "@polkadot/api": ^9.3.3
+  checksum: 5b016f0dc508aa7ff07d6443aca1b776eb1d786f9fbcd3e90a6fc52931f1c3807bb2df9fec0f884cd3897ed872f41666c4f4561136f3439e9e7848f762599967
+  languageName: node
+  linkType: hard
+
 "@ampproject/remapping@npm:^2.1.0":
   version: 2.1.1
   resolution: "@ampproject/remapping@npm:2.1.1"
@@ -2835,6 +2844,15 @@ __metadata:
   resolution: "@polkadot/app-alliance@workspace:packages/page-alliance"
   dependencies:
     "@babel/runtime": ^7.18.9
+  languageName: unknown
+  linkType: soft
+
+"@polkadot/app-artists@workspace:packages/page-artists":
+  version: 0.0.0-use.local
+  resolution: "@polkadot/app-artists@workspace:packages/page-artists"
+  dependencies:
+    "@babel/runtime": ^7.18.9
+    "@polkadot/react-components": ^0.121.2-51-x
   languageName: unknown
   linkType: soft
 
@@ -16388,6 +16406,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "polkadot-apps@workspace:."
   dependencies:
+    "@allfeat/types": ^1.0.1
     "@babel/core": ^7.18.13
     "@babel/register": ^7.18.9
     "@babel/runtime": ^7.18.9

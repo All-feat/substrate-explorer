@@ -8,6 +8,7 @@ import accounts from './accounts';
 import addresses from './addresses';
 import alliance from './alliance';
 import assets from './assets';
+import artists from './artists';
 import bounties from './bounties';
 import calendar from './calendar';
 import claims from './claims';
@@ -63,6 +64,7 @@ export default function create (t: TFunction): Routes {
     membership(t),
     alliance(t),
     fellowship(t),
+    artists(t),
     ranked(t),
     preimages(t),
     whitelist(t),
