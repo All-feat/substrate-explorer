@@ -37,4 +37,16 @@ export default React.memo(styled(MusicStyle)`
   &.row td {
     padding: 1rem 0;
   }
+
+  .allfeat-sub-table tr {
+    background-color: transparent !important;
+  }
+
+  .align-end {
+    text-align: end;
+  }
+
+  .w-full {
+    width: 100%;
+  }
 `);
