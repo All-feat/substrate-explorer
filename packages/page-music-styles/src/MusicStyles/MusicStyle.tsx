@@ -49,4 +49,8 @@ export default React.memo(styled(MusicStyle)`
   .w-full {
     width: 100%;
   }
+
+  &.row td {
+    padding: 1rem 0;
+  }
 `);
