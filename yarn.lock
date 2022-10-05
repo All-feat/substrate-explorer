@@ -3001,6 +3001,7 @@ __metadata:
   resolution: "@polkadot/app-music-styles@workspace:packages/page-music-styles"
   dependencies:
     "@babel/runtime": ^7.18.9
+    "@polkadot/api": ^9.4.3
     "@polkadot/hw-ledger": ^10.1.7
     "@polkadot/phishing": ^0.18.7
     "@polkadot/react-components": ^0.121.2-51-x

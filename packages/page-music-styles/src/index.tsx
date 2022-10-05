@@ -11,7 +11,7 @@ import { Tabs } from '@polkadot/react-components';
 import MusicStyles from './MusicStyles';
 import { useTranslation } from './translate';
 
-function AccountsApp ({ basePath, onStatusChange }: Props): React.ReactElement<Props> {
+function MusicStylesApp ({ basePath, onStatusChange }: Props): React.ReactElement<Props> {
   const { t } = useTranslation();
 
   const tabsRef = useRef([
@@ -40,4 +40,4 @@ function AccountsApp ({ basePath, onStatusChange }: Props): React.ReactElement<P
   );
 }
 
-export default React.memo(AccountsApp);
+export default React.memo(MusicStylesApp);

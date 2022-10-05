@@ -4,54 +4,37 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { ExpandButton, Icon } from '@polkadot/react-components';
-import { useToggle } from '@polkadot/react-hooks';
+import { MusicStyle as Style } from './types';
 
 interface Props {
-  name: string
+  style: Style
   className?: string;
 }
 
-function MusicStyle ({ className = '', name }: Props): React.ReactElement<Props> {
-  const [isExpanded, toggleIsExpanded] = useToggle(false);
-
+function MusicStyle ({ className = '', style }: Props): React.ReactElement<Props> {
   return (
-    <>
-      <tr className={`${className}${isExpanded ? ' noBorder' : ''}`}>
-        <td className='favorite'>
-          <Icon
-            color='grey'
-            icon='music'
-          />
-        </td>
-        <td>
-          {name}
-        </td>
-        <td className='td-full'></td>
-        <td className=''>
-          <ExpandButton
-            expanded={isExpanded}
-            onClick={toggleIsExpanded}
-          />
-        </td>
-      </tr>
-      <tr className={`${className} ${isExpanded ? 'isExpanded' : 'isCollapsed'}`}>
-        <td colSpan={2} />
-        <td>
-          Hello world
-        </td>
-        <td colSpan={2} />
-      </tr>
-    </>
+    <tr className={`${className} row`}>
+      <td colSpan={1}>
+        {style.parent.toUtf8()}
+      </td>
+      <td
+        className='align-end'
+        colSpan={1}
+      >
+        <p>
+          {style.children ? style.children.map((v) => v.toUtf8()).join(', ') : ''}
+        </p>
+      </td>
+    </tr>
   );
 }
 
 export default React.memo(styled(MusicStyle)`
-  &.isCollapsed {
-    visibility: collapse;
+  .align-end {
+    text-align: end;
   }
 
-  &.isExpanded {
-    visibility: visible;
+  &.row td {
+    padding: 1rem 0;
   }
 `);
