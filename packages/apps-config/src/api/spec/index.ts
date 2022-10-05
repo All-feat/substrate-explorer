@@ -5,6 +5,7 @@ import type { OverrideBundleDefinition } from '@polkadot/types/types';
 
 import acala from './acala';
 import ajuna from './ajuna';
+import allfeat from './allfeat';
 import altair from './altair';
 import apron from './apron';
 import aresGladios from './ares-gladios';
@@ -142,6 +143,7 @@ const spec: Record<string, OverrideBundleDefinition> = {
   VLN: vln,
   'VLN-PC': vlnrococo,
   ...acala,
+  ...allfeat,
   ajuna,
   altair,
   apron,
