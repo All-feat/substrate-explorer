@@ -1,17 +1,24 @@
 // Copyright 2017-2022 @polkadot/app-accounts authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { StorageKey } from '@polkadot/types';
-import { Codec } from '@polkadot/types-codec/types';
+import { BaseArtist, OwnedBaseArtist, StorageMap } from './types';
 
-import { StorageMap } from './types';
+export const OPT_ENTRIES = {
+  transform: (entries: StorageMap<BaseArtist>[]): OwnedBaseArtist[] => {
+    return entries
+      .map(([{ args: [accountId] }, option]): OwnedBaseArtist | null => {
+        if (option.isNone) {
+          return null;
+        }
 
-export function unwrapStorageMapValues<T extends Codec> (raw?: StorageMap<T>[]): [StorageKey, T][] {
-  if (typeof raw === 'undefined') {
-    return [];
+        const { createdAt, name } = option.unwrap();
+
+        return {
+          accountId: accountId.toString(),
+          createdAt,
+          name: name.toUtf8()
+        };
+      })
+      .filter((value): value is OwnedBaseArtist => !!value);
   }
-
-  return raw
-    .filter(([, option]) => option.isSome)
-    .map(([key, option]) => [key, option.unwrap()]);
-}
+};

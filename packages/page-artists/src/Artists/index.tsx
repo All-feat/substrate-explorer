@@ -4,13 +4,15 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
 
-import { CardSummary, Columar, SummaryBox, Table } from '@polkadot/react-components';
-import { useApi, useMapEntries } from '@polkadot/react-hooks';
+import { Button, CardSummary, Columar, SummaryBox, Table } from '@polkadot/react-components';
+import { useApi, useEventTrigger, useMapEntries } from '@polkadot/react-hooks';
 
 import { useTranslation } from '../translate';
 import Artist from './Artist';
-import { ArtistsRaw } from './types';
-import { unwrapStorageMapValues } from './utils';
+import Candidate from './Candidate';
+import SubmitCandidate from './SubmitCandidate';
+import { OwnedArtist, OwnedCandidate } from './types';
+import { OPT_ENTRIES } from './utils';
 
 interface Props {
   className?: string;
@@ -21,40 +23,43 @@ function Overview ({ className = '' }: Props): React.ReactElement<Props> {
   const { api } = useApi();
   const artistHeader = useRef([[t('artists'), 'start', 2]]);
   const candidateHeader = useRef([[t('candidates'), 'start', 2]]);
-  const artistsRaw = useMapEntries<ArtistsRaw>(api.query.artists.artists);
-  const candidatesRaw = useMapEntries<ArtistsRaw>(api.query.artists.candidates);
-  const artists = unwrapStorageMapValues(artistsRaw);
-  const candidates = unwrapStorageMapValues(candidatesRaw);
+  const trigger = useEventTrigger([
+    api.events.artists?.CandidateAdded,
+    api.events.artists?.CandidateWithdrew
+  ]);
+  const artists = useMapEntries<OwnedArtist[]>(api.query.artists.artists, OPT_ENTRIES, trigger.blockHash);
+  const candidates = useMapEntries<OwnedCandidate[]>(api.query.artists.candidates, OPT_ENTRIES, trigger.blockHash);
 
   return (
     <div className={className}>
       <SummaryBox>
         <div className='flex-1' />
         <CardSummary label={t<string>('candidate count')}>
-          {candidates.length}
+          {candidates?.length || 0}
         </CardSummary>
         <CardSummary label={t<string>('artist count')}>
-          {artists.length}
+          {artists?.length || 0}
         </CardSummary>
       </SummaryBox>
+      <Button.Group>
+        <SubmitCandidate />
+      </Button.Group>
       <Columar>
         <Columar.Column>
           <Table header={candidateHeader.current}>
-            {candidates.map(([key, candidate], i) => (
-              <Artist
-                accountId={key}
-                artist={candidate}
+            {candidates && candidates.map((candidate, i) => (
+              <Candidate
                 key={i}
+                {...candidate}
               />
             ))}
           </Table>
         </Columar.Column>
         <Columar.Column>
           <Table header={artistHeader.current}>
-            {artists.map(([key, artist], i) => (
+            {artists && artists.map((artist, i) => (
               <Artist
-                accountId={key}
-                artist={artist}
+                {...artist}
                 key={i}
               />
             ))}
