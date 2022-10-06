@@ -13,7 +13,7 @@ import { useEffect, useState } from 'react';
 import { useLeaseRangeMax } from '@polkadot/app-parachains/useLeaseRanges';
 import { createNamedHook, useApi, useBestNumber, useBlockInterval, useCall } from '@polkadot/react-hooks';
 import { BN_ONE, BN_ZERO } from '@polkadot/util';
-import BlockByNumber from "@polkadot/app-explorer/BlockInfo/ByNumber";
+// import BlockByNumber from "@polkadot/app-explorer/BlockInfo/ByNumber";
 
 interface DateExt {
   date: Date;
