@@ -1,16 +1,19 @@
 // Copyright 2017-2022 @polkadot/app-accounts authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import { Bytes, Option, StorageKey, u32 } from '@polkadot/types';
+import { Bytes, Option, StorageKey, Struct, u32, Vec } from '@polkadot/types';
 import { Codec } from '@polkadot/types-codec/types';
 
 export type StorageMap<T extends Codec> = [StorageKey, Option<T>]
 
-// `Base` means `raw` as it comes from the blockchain
-export interface BaseArtist extends Codec {
-  name: Bytes
-  createdAt: u32
+// interface copied from allfeat.js
+interface PalletArtistsArtistInfo extends Struct {
+  readonly name: Bytes;
+  readonly createdAt: u32;
 }
+
+// `Base` means `raw` as it comes from the blockchain
+export type BaseArtist = PalletArtistsArtistInfo
 
 // `Owned` means transformed
 export interface OwnedBaseArtist {
@@ -21,3 +24,16 @@ export interface OwnedBaseArtist {
 
 export type OwnedCandidate = OwnedBaseArtist
 export type OwnedArtist = OwnedBaseArtist
+
+// interface copied from allfeat.js
+export interface PalletArtistIdentityMetadata extends Struct {
+  readonly alias: Bytes;
+  readonly bio: Bytes;
+  readonly profilePic: Bytes;
+  readonly musicStyles: Vec<Bytes>;
+  readonly twitter: Bytes;
+  readonly facebook: Bytes;
+  readonly instagram: Bytes;
+  readonly spotify: Bytes;
+  readonly appleMusic: Bytes;
+}

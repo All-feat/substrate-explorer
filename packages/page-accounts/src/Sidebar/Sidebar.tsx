@@ -4,9 +4,11 @@
 import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 
+import { ApiPromise } from '@polkadot/api';
+import { PalletArtistIdentityMetadata } from '@polkadot/app-artists/Artists/types';
 import { LinkExternal, Sidebar } from '@polkadot/react-components';
 import { colorLink } from '@polkadot/react-components/styles/theme';
-import { useAccountInfo } from '@polkadot/react-hooks';
+import { useAccountInfo, useApi, useCall } from '@polkadot/react-hooks';
 
 import Balances from './Balances';
 import Identity from './Identity';
@@ -21,11 +23,26 @@ interface Props {
   onUpdateName: () => void;
 }
 
+function useArtistIdentity (api: ApiPromise, address: string) {
+  return useCall<PalletArtistIdentityMetadata>(api.query.artistIdentity.artistMetadata, [address]);
+}
+
 function FullSidebar ({ address, className = '', dataTestId, onClose, onUpdateName }: Props): React.ReactElement<Props> {
+  const { api } = useApi();
   const [inEditMode, setInEditMode] = useState<boolean>(false);
   const { accountIndex, flags, identity, meta } = useAccountInfo(address);
+  const artistIdentity = useArtistIdentity(api, address);
 
   const ref = useRef<HTMLDivElement>(null);
+
+  const fields = ['alias',
+    'bio',
+    'profilePic',
+    'twitter',
+    'facebook',
+    'instagram',
+    'spotify',
+    'appleMusic'];
 
   return (
     <Sidebar
@@ -49,6 +66,19 @@ function FullSidebar ({ address, className = '', dataTestId, onClose, onUpdateNa
       </div>
       <div className='ui--ScrollSection'>
         <Balances address={address} />
+        <div>
+          <h3>Artist identity</h3>
+          <ul>
+            {artistIdentity && fields.map((key, i) => (
+              <li key={i}>
+                {key}: {artistIdentity.get(key)?.toHuman() || ''}
+              </li>
+            ))}
+            <li>
+              musicStyles: {artistIdentity?.get('musicStyles')?.toHuman() || ''}
+            </li>
+          </ul>
+        </div>
         <Identity
           address={address}
           identity={identity}
