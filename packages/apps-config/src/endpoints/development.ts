@@ -67,16 +67,16 @@ export function createDev (t: TFunction): LinkOption[] {
       dnslink: 'allfeat',
       homepage: 'http://www.allfeat.com/',
       info: 'allfeat',
-      text: t('rpc.dev.allfeat', 'Allfeat', { ns: 'apps-config' }),
-      textBy: '127.0.0.1:9944',
-      value: 'ws://127.0.0.1:9944'
-    },
-    {
-      dnslink: 'local',
-      info: 'local',
-      text: t('rpc.dev.local', 'Local Node', { ns: 'apps-config' }),
+      text: t('rpc.dev.allfeat.local', 'Allfeat Local Node', { ns: 'apps-config' }),
       textBy: '127.0.0.1:9944',
       value: 'ws://127.0.0.1:9944'
     }
+    // {
+    //   dnslink: 'local',
+    //   info: 'local',
+    //   text: t('rpc.dev.local', 'Local Node', { ns: 'apps-config' }),
+    //   textBy: '127.0.0.1:9944',
+    //   value: 'ws://127.0.0.1:9944'
+    // }
   ];
 }

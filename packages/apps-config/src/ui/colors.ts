@@ -264,6 +264,7 @@ export const chainColors: Record<string, string> = Object.entries({
   'Aleph Zero': chainAleph,
   'Aleph Zero Testnet': chainAleph,
   Allfeat: chainAllfeat,
+  'Allfeat development': chainAllfeat,
   Altair: chainAltair,
   Amplitude: chainAmplitude,
   'Amplitude Testnet': chainAmplitudeRococo,
