@@ -17,6 +17,8 @@
       "@polkadot/app-addresses/*": ["page-addresses/src/*"],
       "@polkadot/app-alliance": ["page-alliance/src"],
       "@polkadot/app-alliance/*": ["page-alliance/src/*"],
+      "@polkadot/app-artists": ["page-artists/src"],
+      "@polkadot/app-artists/*": ["page-artists/src/*"],
       "@polkadot/app-assets": ["page-assets/src"],
       "@polkadot/app-assets/*": ["page-assets/src/*"],
       "@polkadot/app-bounties": ["page-bounties/src"],

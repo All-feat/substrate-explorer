@@ -7,6 +7,7 @@ import type { Routes } from './types';
 import accounts from './accounts';
 import addresses from './addresses';
 import alliance from './alliance';
+import artists from './artists';
 import assets from './assets';
 import bounties from './bounties';
 import calendar from './calendar';
@@ -48,6 +49,7 @@ export default function create (t: TFunction): Routes {
   return [
     accounts(t),
     addresses(t),
+    artists(t),
     explorer(t),
     claims(t),
     poll(t),
