@@ -4,6 +4,7 @@
 import React, { useRef, useState } from 'react';
 import styled from 'styled-components';
 
+import ArtistIdentity from '@polkadot/app-artists/ArtistIdentity';
 import { LinkExternal, Sidebar } from '@polkadot/react-components';
 import { colorLink } from '@polkadot/react-components/styles/theme';
 import { useAccountInfo } from '@polkadot/react-hooks';
@@ -24,7 +25,6 @@ interface Props {
 function FullSidebar ({ address, className = '', dataTestId, onClose, onUpdateName }: Props): React.ReactElement<Props> {
   const [inEditMode, setInEditMode] = useState<boolean>(false);
   const { accountIndex, flags, identity, meta } = useAccountInfo(address);
-
   const ref = useRef<HTMLDivElement>(null);
 
   return (
@@ -49,6 +49,7 @@ function FullSidebar ({ address, className = '', dataTestId, onClose, onUpdateNa
       </div>
       <div className='ui--ScrollSection'>
         <Balances address={address} />
+        <ArtistIdentity address={address} />
         <Identity
           address={address}
           identity={identity}
