@@ -1,7 +1,7 @@
 // Copyright 2017-2022 @polkadot/app-accounts authors & contributors
 // SPDX-License-Identifier: Apache-2.0
 
-import React, { useMemo } from 'react';
+import React, { CSSProperties, useMemo } from 'react';
 import styled from 'styled-components';
 
 import EditArtistIdentityBytesField from '@polkadot/app-artists/ArtistIdentity/EditArtistIdentity';
@@ -35,8 +35,8 @@ interface ArtistIdentityTableProps {
 function ArtistIdentityTable ({ address, metadata }: ArtistIdentityTableProps) {
   const { t } = useTranslation();
   const stringFields = useMemo(() => unwrapStringMetadata(metadata), [metadata]);
-  const trStyle = { backgroundColor: 'transparent' };
-  const tdStyle = { border: 'none', paddingLeft: 0 };
+  const trStyle: CSSProperties = { backgroundColor: 'transparent' };
+  const tdStyle: CSSProperties = { border: 'none', paddingLeft: 0, wordBreak: 'break-all' };
 
   return (
     <section>
@@ -44,7 +44,7 @@ function ArtistIdentityTable ({ address, metadata }: ArtistIdentityTableProps) {
         {t<string>('Artist identity')}
       </div>
       <Table
-        className='mini allfeat-artist-identity-table'
+        className='mini'
         isInline
       >
         {stringFields.map(({ key, value }) => (
