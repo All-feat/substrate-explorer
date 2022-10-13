@@ -3,7 +3,7 @@
 
 import { Bytes, Option, StorageKey, Struct, u32, Vec } from '@polkadot/types';
 
-// interface copied from allfeat.js
+// interface copied from @allfeat.js/types
 export interface PalletArtistIdentityMetadata extends Struct {
   readonly alias: Bytes;
   readonly bio: Bytes;
@@ -16,7 +16,7 @@ export interface PalletArtistIdentityMetadata extends Struct {
   readonly appleMusic: Bytes;
 }
 
-// interface copied from allfeat.js
+// interface copied from @allfeat.js/types
 export interface PalletArtistsArtistInfo extends Struct {
   readonly name: Bytes;
   readonly createdAt: u32;

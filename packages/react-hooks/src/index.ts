@@ -69,3 +69,8 @@ export { useTxBatch } from './useTxBatch';
 export { useVotingStatus } from './useVotingStatus';
 export { useWeight } from './useWeight';
 export { useWindowSize } from './useWindowSize';
+export { useArtists } from './useArtists';
+export { useIsArtist } from './useIsArtist';
+export { useIsCandidate } from './useIsCandidate';
+export { useCandidates } from './useCandidates';
+export { useArtistIdentity } from './useArtistIdentity';

@@ -15,9 +15,9 @@ interface Props {
   className?: string;
 }
 
-function Flags ({ className = '', flags: { isCouncil, isDevelopment, isExternal, isInjected, isMultisig, isNominator, isProxied, isSociety, isSudo, isTechCommittee, isValidator } }: Props): React.ReactElement<Props> | null {
+function Flags ({ className = '', flags: { isArtist, isCandidate, isCouncil, isDevelopment, isExternal, isInjected, isMultisig, isNominator, isProxied, isSociety, isSudo, isTechCommittee, isValidator } }: Props): React.ReactElement<Props> | null {
   const { t } = useTranslation();
-  const hasFlags = isCouncil || isDevelopment || isExternal || isInjected || isMultisig || isProxied || isSociety || isSudo || isTechCommittee || isValidator || isNominator;
+  const hasFlags = isArtist || isCandidate || isCouncil || isDevelopment || isExternal || isInjected || isMultisig || isProxied || isSociety || isSudo || isTechCommittee || isValidator || isNominator;
 
   if (!hasFlags) {
     return null;
@@ -31,6 +31,18 @@ function Flags ({ className = '', flags: { isCouncil, isDevelopment, isExternal,
         )
       }
       <div>
+        {isArtist && (
+          <Flag
+            color='red'
+            label={t<string>('Artist')}
+          />
+        )}
+        {isCandidate && (
+          <Flag
+            color='orange'
+            label={t<string>('Candidate')}
+          />
+        )}
         {isValidator && (
           <Flag
             color='theme'

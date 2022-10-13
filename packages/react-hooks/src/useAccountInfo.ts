@@ -17,9 +17,13 @@ import { useApi } from './useApi';
 import { useCall } from './useCall';
 import { useDeriveAccountFlags } from './useDeriveAccountFlags';
 import { useDeriveAccountInfo } from './useDeriveAccountInfo';
+import { useIsArtist } from './useIsArtist';
+import { useIsCandidate } from './useIsCandidate';
 import { useToggle } from './useToggle';
 
 const IS_NONE = {
+  isArtist: false,
+  isCandidate: false,
   isCouncil: false,
   isDevelopment: false,
   isEditable: false,
@@ -43,6 +47,8 @@ function useAccountInfoImpl (value: string | null, isContract = false): UseAccou
   const { api } = useApi();
   const { isAccount } = useAccounts();
   const { isAddress } = useAddresses();
+  const isArtist = useIsArtist(value);
+  const isCandidate = useIsCandidate(value);
   const accountInfo = useDeriveAccountInfo(value);
   const accountFlags = useDeriveAccountFlags(value);
   const nominator = useCall<Nominations>(api.query.staking?.nominators, [value]);
@@ -56,6 +62,14 @@ function useAccountInfoImpl (value: string | null, isContract = false): UseAccou
   const [meta, setMeta] = useState<KeyringJson$Meta | undefined>();
   const [isEditingName, toggleIsEditingName, setIsEditingName] = useToggle();
   const [isEditingTags, toggleIsEditingTags, setIsEditingTags] = useToggle();
+
+  useEffect(() => {
+    setFlags((flags) => ({
+      ...flags,
+      isArtist: isArtist(),
+      isCandidate: isCandidate()
+    }));
+  }, [isArtist, isCandidate, value]);
 
   useEffect((): void => {
     validator && setFlags((flags) => ({

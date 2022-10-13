@@ -86,6 +86,8 @@ export interface UseSudo {
 }
 
 export interface AddressFlags extends DeriveAccountFlags {
+  isArtist: boolean
+  isCandidate: boolean
   isDevelopment: boolean;
   isEditable: boolean;
   isEthereum: boolean;

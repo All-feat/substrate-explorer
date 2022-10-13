@@ -20,8 +20,6 @@ function Candidate ({ accountId, className = '', name }: Props): React.ReactElem
   const { api } = useApi();
   const [isExpanded, toggleIsExpanded] = useToggle(false);
 
-  console.log({ accountId, name });
-
   return (
     <>
       <tr className={`${className}${isExpanded ? ' noBorder' : ''}`}>

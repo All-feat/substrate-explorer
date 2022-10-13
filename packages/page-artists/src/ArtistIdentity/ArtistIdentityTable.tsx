@@ -4,12 +4,12 @@
 import React, { CSSProperties, useMemo } from 'react';
 import styled from 'styled-components';
 
-import EditArtistIdentityBytesField from '@polkadot/app-artists/ArtistIdentity/EditArtistIdentity';
 import { Table } from '@polkadot/react-components';
 import { Bytes } from '@polkadot/types';
 
-import { useTranslation } from '../../../page-accounts/src/translate';
-import { PalletArtistIdentityMetadata } from './types';
+import { useTranslation } from '../translate';
+import { PalletArtistIdentityMetadata } from '../types';
+import EditArtistIdentityBytesField from './EditArtistIdentity';
 
 function unwrapStringMetadata (metadata?: PalletArtistIdentityMetadata) {
   if (metadata && 'entries' in metadata) {
@@ -57,7 +57,7 @@ function ArtistIdentityTable ({ address, metadata }: ArtistIdentityTableProps) {
                 {key}
               </label>
             </td>
-            <td style={tdStyle}>
+            <td style={{ width: '100%', ...tdStyle }}>
               {value.toUtf8()}
             </td>
             <td style={tdStyle}>
