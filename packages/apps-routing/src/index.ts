@@ -7,6 +7,7 @@ import type { Routes } from './types';
 import accounts from './accounts';
 import addresses from './addresses';
 import alliance from './alliance';
+import artists from './artists';
 import assets from './assets';
 import bounties from './bounties';
 import calendar from './calendar';
@@ -22,6 +23,7 @@ import files from './files';
 import gilt from './gilt';
 import js from './js';
 import membership from './membership';
+import musicStyle from './musicStyles';
 import nfts from './nfts';
 import parachains from './parachains';
 import poll from './poll';
@@ -47,6 +49,7 @@ export default function create (t: TFunction): Routes {
   return [
     accounts(t),
     addresses(t),
+    artists(t),
     explorer(t),
     claims(t),
     poll(t),
@@ -61,6 +64,7 @@ export default function create (t: TFunction): Routes {
     bounties(t),
     techcomm(t),
     membership(t),
+    musicStyle(t),
     alliance(t),
     fellowship(t),
     ranked(t),

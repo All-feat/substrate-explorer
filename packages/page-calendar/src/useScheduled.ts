@@ -13,6 +13,7 @@ import { useEffect, useState } from 'react';
 import { useLeaseRangeMax } from '@polkadot/app-parachains/useLeaseRanges';
 import { createNamedHook, useApi, useBestNumber, useBlockInterval, useCall } from '@polkadot/react-hooks';
 import { BN_ONE, BN_ZERO } from '@polkadot/util';
+// import BlockByNumber from "@polkadot/app-explorer/BlockInfo/ByNumber";
 
 interface DateExt {
   date: Date;
@@ -31,7 +32,7 @@ function newDate (blocks: BN, blockTime: BN): DateExt {
 
 function createConstDurations (bestNumber: BlockNumber, blockTime: BN, items: [EntryType, BlockNumber?, BN?, BN?][]): [EntryType, EntryInfo[]][] {
   return items.map(([type, duration, additional = BN_ZERO, offset = BN_ZERO]): [EntryType, EntryInfo[]] => {
-    if (!duration) {
+    if (!duration || duration.eq(0)) {
       return [type, []];
     }
 

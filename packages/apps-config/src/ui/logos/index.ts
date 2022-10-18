@@ -11,6 +11,7 @@
 import { sanitize } from '../util';
 import chainAcala from './chains/acala.svg';
 import chainAleph from './chains/aleph.svg';
+import chainAllfeat from './chains/allfeat.png';
 import chainAltair from './chains/altair.svg';
 import chainAmplitude from './chains/amplitude.svg';
 import chainAstar from './chains/astar.png';
@@ -232,6 +233,8 @@ export const chainLogos = Object.entries({
   'Ajuna Testnet': nodeAjuna,
   'Aleph Zero': chainAleph,
   'Aleph Zero Testnet': chainAleph,
+  Allfeat: chainAllfeat,
+  'Allfeat development': chainAllfeat,
   Altair: chainAltair,
   Amplitude: chainAmplitude,
   'Apron PC1': nodeApron,
@@ -459,6 +462,7 @@ export const chainLogos = Object.entries({
 export const nodeLogos = Object.entries({
   'Acala Node': chainAcala,
   'Ajuna Node': nodeAjuna,
+  'Allfeat Node': chainAllfeat,
   Amplitude: chainAmplitude,
   'Apron Node': nodeApron,
   'Apron Parachain Collator': nodeApron,
@@ -676,6 +680,7 @@ export const namedLogos: Record<string, unknown> = {
   ajuna: nodeAjuna,
   aleph: chainAleph,
   alexander: nodePolkadot,
+  allfeat: chainAllfeat,
   altair: chainAltair,
   amplitude: chainAmplitude,
   arctic: nodeArctic,

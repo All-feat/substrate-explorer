@@ -1,0 +1,20 @@
+{
+  "Overview": "Overview",
+  "Submit Transaction": "Submit Transaction",
+  "Submit a candidature to become an artist": "Submit a candidature to become an artist",
+  "Submit candidature": "Submit candidature",
+  "The account you want to submit a candidature from.": "The account you want to submit a candidature from.",
+  "The hash of the preimage for the proposal as previously submitted or intended.": "The hash of the preimage for the proposal as previously submitted or intended.",
+  "The preimage hash of the proposal": "The preimage hash of the proposal",
+  "The wanted artist name.": "The wanted artist name.",
+  "Withdraw candidacy": "Withdraw candidacy",
+  "artist count": "artist count",
+  "artist name": "artist name",
+  "artists": "artists",
+  "candidate count": "candidate count",
+  "candidates": "candidates",
+  "free balance": "free balance",
+  "preimage hash": "preimage hash",
+  "submit from account": "submit from account",
+  "using the selected account": "using the selected account"
+}

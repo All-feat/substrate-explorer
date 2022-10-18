@@ -64,11 +64,19 @@ export function createOwn (t: TFunction): LinkOption[] {
 export function createDev (t: TFunction): LinkOption[] {
   return [
     {
-      dnslink: 'local',
-      info: 'local',
-      text: t('rpc.dev.local', 'Local Node', { ns: 'apps-config' }),
+      dnslink: 'allfeat',
+      homepage: 'http://www.allfeat.com/',
+      info: 'allfeat',
+      text: t('rpc.dev.allfeat.local', 'Allfeat Local Node', { ns: 'apps-config' }),
       textBy: '127.0.0.1:9944',
       value: 'ws://127.0.0.1:9944'
     }
+    // {
+    //   dnslink: 'local',
+    //   info: 'local',
+    //   text: t('rpc.dev.local', 'Local Node', { ns: 'apps-config' }),
+    //   textBy: '127.0.0.1:9944',
+    //   value: 'ws://127.0.0.1:9944'
+    // }
   ];
 }
