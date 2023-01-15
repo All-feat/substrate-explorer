@@ -1,4 +1,5 @@
 {
+  "Artist identity": "Artist identity",
   "Overview": "Overview",
   "Submit Transaction": "Submit Transaction",
   "Submit a candidature to become an artist": "Submit a candidature to become an artist",
@@ -7,6 +8,8 @@
   "The hash of the preimage for the proposal as previously submitted or intended.": "The hash of the preimage for the proposal as previously submitted or intended.",
   "The preimage hash of the proposal": "The preimage hash of the proposal",
   "The wanted artist name.": "The wanted artist name.",
+  "Update Artist identity": "Update Artist identity",
+  "Update from this account.": "Update from this account.",
   "Withdraw candidacy": "Withdraw candidacy",
   "artist count": "artist count",
   "artist name": "artist name",

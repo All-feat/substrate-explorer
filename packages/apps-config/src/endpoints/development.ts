@@ -65,7 +65,7 @@ export function createDev (t: TFunction): LinkOption[] {
   return [
     {
       dnslink: 'allfeat',
-      homepage: 'http://www.allfeat.com/',
+      homepage: 'https://www.allfeat.com/',
       info: 'allfeat',
       text: t('rpc.dev.allfeat.local', 'Allfeat Local Node', { ns: 'apps-config' }),
       textBy: '127.0.0.1:9944',
