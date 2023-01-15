@@ -12,7 +12,7 @@ module.exports = merge(
   {
     devServer: {
       hot: true,
-      open: false,
+      open: true,
       port: 3000,
       static: path.resolve(__dirname, 'build')
     },
