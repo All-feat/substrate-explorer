@@ -5,8 +5,7 @@ import type { TFunction } from '../types';
 import type { LinkOption } from './types';
 
 import { defaultT } from '../util';
-import { createDev } from './development';
-// import { createCustom, createDev, createOwn } from './development';
+import { createCustom, createDev, createOwn } from './development';
 // import { prodChains } from './production';
 import { testChains } from './testing';
 import { expandEndpoints } from './util';
@@ -17,7 +16,7 @@ export * from './testing';
 
 export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, withSort = true): LinkOption[] {
   return [
-    // ...createCustom(t),
+    ...createCustom(t),
     // {
     //   isDisabled: false,
     //   isHeader: true,
@@ -36,7 +35,7 @@ export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, w
      },
      ...expandEndpoints(t, testChains, firstOnly, withSort),
     {
-      // isDevelopment: true,
+      isDevelopment: true,
       isDisabled: false,
       isHeader: true,
       isSpaced: true,
@@ -44,7 +43,7 @@ export function createWsEndpoints (t: TFunction = defaultT, firstOnly = false, w
       textBy: '',
       value: ''
     },
-    ...createDev(t)
-    // ...createOwn(t)
+    ...createDev(t),
+    ...createOwn(t)
   ].filter(({ isDisabled }) => !isDisabled);
 }

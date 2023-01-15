@@ -8,7 +8,7 @@ const { merge } = require('webpack-merge');
 const baseConfig = require('./webpack.base.cjs');
 
 module.exports = merge(
-  baseConfig(__dirname, 'development'),
+  baseConfig(__dirname, 'production'),
   {
     devServer: {
       allowedHosts: 'all',
