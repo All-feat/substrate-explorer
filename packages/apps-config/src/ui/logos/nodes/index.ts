@@ -4,6 +4,7 @@
 // Do not edit. Auto-generated via node scripts/imgConvert.mjs
 
 export { nodesAjunaPNG } from './generated/ajunaPNG.js';
+export { nodesAllfeatSVG } from './generated/allfeatSVG.js';
 export { nodesApronPNG } from './generated/apronPNG.js';
 export { nodesArcticPNG } from './generated/arcticPNG.js';
 export { nodesAresGladiosSVG } from './generated/ares-gladiosSVG.js';
@@ -58,6 +59,7 @@ export { nodesHelixstreetPNG } from './generated/helixstreetPNG.js';
 export { nodesHumanodePNG } from './generated/humanodePNG.js';
 export { nodesIdavollPNG } from './generated/idavollPNG.js';
 export { nodesImbuePNG } from './generated/imbuePNG.js';
+export { nodesImgPNG } from './generated/imgPNG.js';
 export { nodesIntegriteeSVG } from './generated/integriteeSVG.js';
 export { nodesInterlaySVG } from './generated/interlaySVG.js';
 export { nodesIpciSVG } from './generated/ipciSVG.js';

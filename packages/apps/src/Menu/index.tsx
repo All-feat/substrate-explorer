@@ -27,16 +27,16 @@ interface Props {
 function createExternals (t: (key: string, optionsOrText?: string | { replace: Record<string, unknown> }, options?: { ns: string }) => string): ItemRoute[] {
   return [
     {
-      href: 'https://github.com/polkadot-js/apps',
+      href: 'https://github.com/allfeat/allfeat',
       icon: 'code-branch',
       name: 'github',
       text: t('nav.github', 'GitHub', { ns: 'apps-routing' })
     },
     {
-      href: 'https://wiki.polkadot.network',
+      href: 'https://docs.allfeat.network',
       icon: 'book',
       name: 'wiki',
-      text: t('nav.wiki', 'Wiki', { ns: 'apps-routing' })
+      text: t('nav.wiki', 'Docs', { ns: 'apps-routing' })
     }
   ];
 }
