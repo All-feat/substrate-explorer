@@ -27,6 +27,12 @@ interface Props {
 function createExternals (t: (key: string, optionsOrText?: string | { replace: Record<string, unknown> }, options?: { ns: string }) => string): ItemRoute[] {
   return [
     {
+      href: 'https://contracts-ui.substrate.io/?rpc=wss://rpc-test.allfeat.io',
+      icon: 'compress',
+      name: 'contracts',
+      text: t('nav.Contracts', 'Contracts', { ns: 'apps-routing' })
+    },
+    {
       href: 'https://github.com/allfeat/allfeat',
       icon: 'code-branch',
       name: 'github',

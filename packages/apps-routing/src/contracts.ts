@@ -26,7 +26,9 @@ export default function create (t: TFunction): Route {
       needsApi: [
         'tx.contracts.instantiateWithCode'
       ],
-      needsApiCheck
+      needsApiCheck,
+      // Waiting a fix for polkadot-v1.0.0 deps compatibility
+      isHidden: true,
     },
     group: 'developer',
     icon: 'compress',
