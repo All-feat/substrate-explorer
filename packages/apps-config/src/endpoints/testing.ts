@@ -19,7 +19,8 @@ export const testChains: Omit<EndpointOption, 'teleport'>[] = [
   {
     info: 'symphonie-testnet',
     providers: {
-      'Allfeat labs': 'wss://rpc-test.allfeat.io'
+      'Allfeat labs': 'wss://rpc-test.allfeat.io',
+      'Allfeat labs 3 (Archive)': 'wss://rpc-test-3.allfeat.io',
     },
     text: 'Symphonie Testnet',
     ui: {
